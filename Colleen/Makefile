@@ -6,7 +6,7 @@
 #    By: jcoignet <jcoignet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/03/22 19:56:29 by jcoignet          #+#    #+#              #
-#    Updated: 2016/03/22 20:13:42 by jcoignet         ###   ########.fr        #
+#    Updated: 2016/03/22 21:32:47 by jcoignet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ SRC = colleen.c
 RSSRC = colleen.rs
 OBJ = colleen.o
 NAME = Colleen
+RSNAME = ColleenRust
 
 all: $(NAME)
 
@@ -26,8 +27,10 @@ $(NAME): $(OBJ)
 $(OBJ): $(SRC)
 	$(CC) $(CFLAGS) -c $(SRC)
 
-rust:
-	$(RS) -o $(NAME) $(RSSRC)
+rust: $(RSNAME)
+
+$(RSNAME): $(RSSRC)
+	$(RS) -o $(RSNAME) $(RSSRC)
 
 clean:
 	rm -f $(OBJ)
@@ -37,4 +40,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all re clean fclean
+.PHONY: all re clean fclean rust
