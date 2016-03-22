@@ -6,7 +6,7 @@
 #    By: jcoignet <jcoignet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/03/22 19:56:29 by jcoignet          #+#    #+#              #
-#    Updated: 2016/03/22 21:26:47 by jcoignet         ###   ########.fr        #
+#    Updated: 2016/03/22 22:05:49 by jcoignet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,4 +25,7 @@ fclean:
 re:
 	$(foreach d,$(DIRS),make -C $(d) re;)
 
-.PHONY: all re clean fclean
+rust:
+	$(foreach d,$(DIRS),make -C $(d) rust;)
+
+.PHONY: all re clean fclean rust

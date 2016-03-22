@@ -6,15 +6,18 @@
 #    By: jcoignet <jcoignet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/03/22 19:56:29 by jcoignet          #+#    #+#              #
-#    Updated: 2016/03/22 20:14:35 by jcoignet         ###   ########.fr        #
+#    Updated: 2016/03/22 22:13:43 by jcoignet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = clang
+RS = rustc
 CFLAGS = -Wall -Wextra -Werror
 SRC = grace.c
+RSSRC = grace.rs
 OBJ = grace.o
 NAME = Grace
+RSNAME = GraceRust
 
 all: $(NAME)
 
@@ -24,12 +27,18 @@ $(NAME): $(OBJ)
 $(OBJ): $(SRC)
 	$(CC) $(CFLAGS) -c $(SRC)
 
+rust: $(RSNAME)
+
+$(RSNAME): $(RSSRC)
+	$(RS) -o $(RSNAME) $(RSSRC)
+
 clean:
 	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)
+	rm -f $(RSNAME)
 
 re: fclean all
 
-.PHONY: all re clean fclean
+.PHONY: all re clean fclean rust
