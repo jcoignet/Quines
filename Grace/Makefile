@@ -6,17 +6,15 @@
 #    By: jcoignet <jcoignet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/03/22 19:56:29 by jcoignet          #+#    #+#              #
-#    Updated: 2016/03/22 20:13:42 by jcoignet         ###   ########.fr        #
+#    Updated: 2016/03/22 20:14:35 by jcoignet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = clang
-RS = rustc
 CFLAGS = -Wall -Wextra -Werror
-SRC = colleen.c
-RSSRC = colleen.rs
-OBJ = colleen.o
-NAME = Colleen
+SRC = grace.c
+OBJ = grace.o
+NAME = Grace
 
 all: $(NAME)
 
@@ -25,9 +23,6 @@ $(NAME): $(OBJ)
 
 $(OBJ): $(SRC)
 	$(CC) $(CFLAGS) -c $(SRC)
-
-rust:
-	$(RS) -o $(NAME) $(RSSRC)
 
 clean:
 	rm -f $(OBJ)

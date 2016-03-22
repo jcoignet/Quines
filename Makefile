@@ -6,35 +6,23 @@
 #    By: jcoignet <jcoignet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/03/22 19:56:29 by jcoignet          #+#    #+#              #
-#    Updated: 2016/03/22 20:13:42 by jcoignet         ###   ########.fr        #
+#    Updated: 2016/03/22 20:13:15 by jcoignet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = clang
-RS = rustc
-CFLAGS = -Wall -Wextra -Werror
-SRC = colleen.c
-RSSRC = colleen.rs
-OBJ = colleen.o
-NAME = Colleen
+DIRS = Colleen \
+	   Grace
 
-all: $(NAME)
-
-$(NAME): $(OBJ)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
-
-$(OBJ): $(SRC)
-	$(CC) $(CFLAGS) -c $(SRC)
-
-rust:
-	$(RS) -o $(NAME) $(RSSRC)
+all:
+	$(foreach d,$(DIRS),make -C $(d);)
 
 clean:
-	rm -f $(OBJ)
+	$(foreach d,$(DIRS),make -C $(d) clean;)
 
-fclean: clean
-	rm -f $(NAME)
+fclean:
+	$(foreach d,$(DIRS),make -C $(d) fclean;)
 
-re: fclean all
+re:
+	$(foreach d,$(DIRS),make -C $(d) re;)
 
 .PHONY: all re clean fclean
