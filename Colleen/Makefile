@@ -6,7 +6,7 @@
 #    By: jcoignet <jcoignet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/03/22 19:56:29 by jcoignet          #+#    #+#              #
-#    Updated: 2016/03/22 21:32:47 by jcoignet         ###   ########.fr        #
+#    Updated: 2016/03/22 21:37:06 by jcoignet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
+	rm -f $(RSNAME)
 
 re: fclean all
 
