@@ -1,11 +1,10 @@
 *.swp
 *.swo
 *.o
-Colleen
 ColleenRust
-Grace
 GraceRust
 Grace_kid.rs
-Sully
+Sully_*.c
+Sully_*.rs
 SullyRust
 out
