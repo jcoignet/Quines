@@ -6,16 +6,16 @@
 #    By: jcoignet <jcoignet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/03/22 19:56:29 by jcoignet          #+#    #+#              #
-#    Updated: 2016/03/22 21:37:06 by jcoignet         ###   ########.fr        #
+#    Updated: 2016/03/23 19:31:37 by jcoignet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = clang
 RS = rustc
 CFLAGS = -Wall -Wextra -Werror
-SRC = colleen.c
-RSSRC = colleen.rs
-OBJ = colleen.o
+SRC = Colleen.c
+RSSRC = Colleen.rs
+OBJ = Colleen.o
 NAME = Colleen
 RSNAME = ColleenRust
 

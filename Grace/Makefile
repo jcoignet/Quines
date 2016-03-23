@@ -6,16 +6,16 @@
 #    By: jcoignet <jcoignet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/03/22 19:56:29 by jcoignet          #+#    #+#              #
-#    Updated: 2016/03/22 22:13:43 by jcoignet         ###   ########.fr        #
+#    Updated: 2016/03/23 19:32:46 by jcoignet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = clang
 RS = rustc
 CFLAGS = -Wall -Wextra -Werror
-SRC = grace.c
-RSSRC = grace.rs
-OBJ = grace.o
+SRC = Grace.c
+RSSRC = Grace.rs
+OBJ = Grace.o
 NAME = Grace
 RSNAME = GraceRust
 
@@ -38,6 +38,7 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 	rm -f $(RSNAME)
+	rm -f Grace_kid.c Grace_kid.rs
 
 re: fclean all
 
